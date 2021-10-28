@@ -1,13 +1,11 @@
 # Convert Naming Convention
 Convert a string array of snake case to camel/pascal case and vice versa.
-
-
+![Convert Naming Convention](convert_naming_convention.png)
 
 ## Snake Case to Camel Case
 
 ### Syntax:
 - **camel_case = snake2camel(snake_case)**
-
 - **camel_case = snake2camel(snake_case, Name, Value)**
 
 ### Input Arguments:
@@ -24,15 +22,14 @@ camel_case = snake2camel(snake_case, 'FirstLetter', 'lower');
 
 % Example 2: Convert from snake case to pascal case
 snake_case = ["num_files", "variable_name", "some_function"];
-camel_case = snake2camel(snake_case, 'FirstLetter', 'upper');
+pascal_case = snake2camel(snake_case, 'FirstLetter', 'upper');
 ```
-
 
 
 ## Camel Case to Snake Case
 
 ### Syntax:
-**snake_case = camel2snake(camel_case)**
+- **snake_case = camel2snake(camel_case)**
 
 ### Input Arguments:
 - **camel_case** - Input text in camel case. [string array | character vector | cell array of character vectors]
@@ -48,4 +45,4 @@ snake_case = camel2snake(camel_case);
 - Moses Yoo, (juyoung.m.yoo at gmail dot com)
 
 ## Special Thanks:
-- Special thanks to Stephen for showing the regexp version of this!
+Special thanks to Stephen for showing the regexp version of this!
