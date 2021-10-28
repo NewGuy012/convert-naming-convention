@@ -1,5 +1,6 @@
 # Convert Naming Convention
-Convert a string array of snake case to camel/pascal case and vice versa.<br />
+Convert a string array of snake case to camel/pascal case and vice versa. <br />
+
 ![Convert Naming Convention](convert_naming_convention.png)
 
 ## Snake Case to Camel Case
