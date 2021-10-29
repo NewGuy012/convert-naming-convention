@@ -15,7 +15,7 @@ Convert from snake case to camel/pascal case and vice versa.
 - **snake_case** - Input text in snake case. [string array | character vector | cell array of character vectors]
 
 ### Name-Value Pair Arguments:
-- **FirstLetter** - Used to set the first letter in lower or upper case. ['lower' (default), 'upper']
+- **FirstLetter** - Used to set the first letter to lower or upper case. ['lower' (default), 'upper']
 
 ### Examples:
 ```matlab
@@ -47,7 +47,7 @@ snake_case = camel2snake(camelCase);
 ### Author:
 - Moses Yoo, (juyoung.m.yoo at gmail dot com)
 
-## Special Thanks:
+## Special Thanks
 Special thanks to Stephen for showing and explaining the much simpler regular expression version!
 
 [![View spider_plot on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/101118-convert-naming-convention)

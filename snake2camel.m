@@ -9,7 +9,7 @@ function camelCase = snake2camel(snake_case, options)
 %                [string array | character vector | cell array of character vectors]
 %
 % Name-Value Pair Arguments:
-%   FirstLetter - Used to set the first letter in lower or upper case.
+%   FirstLetter - Used to set the first letter to lower or upper case.
 %                 ['lower' (default), 'upper']
 %
 % Examples:
