@@ -3,7 +3,9 @@
 # Convert Naming Convention
 Convert from snake case to camel/pascal case and vice versa.
 
-![Convert Naming Convention](convert_naming_convention.png)
+<p align="center">
+  <img src="convert_naming_convention.png">
+</p>
 
 ## Snake Case to Camel Case
 
