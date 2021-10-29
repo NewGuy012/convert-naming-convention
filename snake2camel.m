@@ -37,6 +37,9 @@ end
 % Capitialize letters with that have an underscore preceding it
 camelCase = regexprep(snake_case,'_([a-z])','${upper($1)}');
 
+% Remove underscore for numbers that have an underscore preceding
+camelCase = regexprep(camelCase,'_([0-9])', '$1');
+
 % Option to capitialize the first letter
 switch options.FirstLetter
     case 'upper'
