@@ -1,20 +1,32 @@
-function camel_case = snake2camel(snake_case, options)
-%snake2camel Converts string array from snake case to camel case
+function camelCase = snake2camel(snake_case, options)
+%snake2camel Converts string array from snake case to camel/pascal case
 %
 % Syntax:
-%   snake2camel(snake_case)
+%   camelCase = snake2camel(snake_case)
 %
 % Input Arguments:
 %   snake_case - Input text in snake case
 %                [string array | character vector | cell array of character vectors]
 %
+% Name-Value Pair Arguments:
+%   FirstLetter - Used to set the first letter in lower or upper case.
+%                 ['lower' (default), 'upper']
+%
 % Examples:
-% % Example 1
-% snake_case = ["num_files", "variable_name", "some_function"];
-% camel_case = snake2camel(snake_case, 'FirstLetter', 'lower');
+%   % Example 1: Convert from snake case to camel case 
+%   snake_case = ["num_files", "variable_name", "some_function"];
+%   camelCase = snake2camel(snake_case);
+%   
+%   % Example 2: Convert from snake case to pascal case
+%   snake_case = ["num_files", "variable_name", "some_function"];
+%   PascalCase = snake2camel(snake_case, 'FirstLetter', 'upper');
 %
 % Author:
 %   Moses Yoo, (juyoung.m.yoo at gmail dot com)
+%
+% Special Thanks:
+%   Special thanks to Stephen for showing and explaining the much simpler
+%   regular expression version!
 
 % Argument validation
 arguments
@@ -22,45 +34,13 @@ arguments
     options.FirstLetter char {mustBeMember(options.FirstLetter, {'lower', 'upper'})} = 'lower'
 end
 
-% Check if input argument is a string
-if ~isstring(snake_case)
-    snake_case = string(snake_case);
-end
+% Capitialize letters with that have an underscore preceding it
+camelCase = regexprep(snake_case,'_([a-z])','${upper($1)}');
 
-% Initialize string array
-camel_case = snake_case;
-
-% Iterate through snake case strings
-for ii = 1:length(snake_case)
-    % Find all the indicies where there is an underscore
-    snake_name = lower(snake_case(ii));
-    index = strfind(snake_name, "_");
-    index = index + 1;
-
-    % Check whether or not to uppercase first letter
-    if strcmpi(options.FirstLetter, 'upper')
-        index = [1, index];
-    end
-
-    % Iterate through found indicies
-    for jj = index
-        % Extract the letter at the index
-        letter = extractBetween(snake_name, jj, jj);
-    
-        % Capitialize if a string
-        if isstring(letter)
-            capital_letter = upper(letter);
-        else
-            capital_letter = letter;
-        end
-
-        % Replace letter with capital letter
-        snake_name = replaceBetween(snake_name, jj, jj, capital_letter);
-    end
-
-    % Remove underscores
-    camel_name = replace(snake_name, "_", "");
-    camel_case(ii) = camel_name;
+% Option to capitialize the first letter
+switch options.FirstLetter
+    case 'upper'
+        camelCase = regexprep(camelCase, '^([a-z])', '${upper($1)}');
 end
 
 end
