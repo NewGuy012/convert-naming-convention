@@ -1,7 +1,7 @@
 [![View spider_plot on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/101118-convert-naming-convention)
 
 # Convert Naming Convention
-Convert a string array of snake case to camel/pascal case and vice versa. <br />
+Convert from snake case to camel/pascal case and vice versa.
 
 ![Convert Naming Convention](convert_naming_convention.png)
 
