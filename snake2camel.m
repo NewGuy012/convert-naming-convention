@@ -40,10 +40,12 @@ camelCase = regexprep(snake_case,'_([a-z])','${upper($1)}');
 % Remove underscore for numbers that have an underscore preceding
 camelCase = regexprep(camelCase,'_([0-9])', '$1');
 
-% Option to capitialize the first letter
+% Option to upper or lower case the first letter
 switch options.FirstLetter
     case 'upper'
         camelCase = regexprep(camelCase, '^([a-z])', '${upper($1)}');
+    case 'lower'
+        camelCase = regexprep(camelCase, '^([A-Z])', '${lower($1)}');
 end
 
 end
