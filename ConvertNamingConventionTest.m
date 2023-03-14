@@ -32,7 +32,7 @@ classdef ConvertNamingConventionTest < matlab.unittest.TestCase
         % Convert from snake case to pascal case
         function Snake2PascalTest(testCase)
             snake_case = ["num_files", "variable_name", "some_function"];
-            act = snake2camel(snake_case, 'FirstLetter', 'upper');
+            [~, act] = snake2camel(snake_case);
             exp = ["NumFiles", "VariableName", "SomeFunction"];
 
             testCase.verifyEqual(act, exp);

@@ -7,41 +7,23 @@ Convert from snake case to camel/pascal case and vice versa.
   <img src="convert_naming_convention.png">
 </p>
 
-## Snake Case to Camel Case
+## Snake Case to Camel/Pascal Case
 
 ### Syntax:
-- **camelCase = snake2camel(snake_case)**
-- **camelCase = snake2camel(snake_case, Name, Value)**
-
-### Input Arguments:
-- **snake_case** - Input text in snake case. [string array | character vector | cell array of character vectors]
-
-### Name-Value Pair Arguments:
-- **FirstLetter** - Used to set the first letter to lower or upper case. ['lower' (default), 'upper']
-
-### Examples:
-```matlab
-% Example 1: Convert from snake case to camel case 
-snake_case = ["num_files", "variable_name", "some_function"];
-camelCase = snake2camel(snake_case);
-
-% Example 2: Convert from snake case to pascal case
-snake_case = ["num_files", "variable_name", "some_function"];
-PascalCase = snake2camel(snake_case, 'FirstLetter', 'upper');
-```
-
-
-## Camel Case to Snake Case
-
-### Syntax:
+- **[camelCase, PascalCase] = snake2camel(snake_case)**
 - **snake_case = camel2snake(camelCase)**
 
 ### Input Arguments:
-- **camelCase** - Input text in camel case. [string array | character vector | cell array of character vectors]
+- **snake_case** - Input text in snake case. [string array | character vector | cell array of character vectors]
+- **camelCase**  - Input text in camel case. [string array | character vector | cell array of character vectors]
 
 ### Examples:
 ```matlab
-% Example 1: Convert from camel case to snake case
+% Example 1: Convert from snake case to camel/pascal case 
+snake_case = ["num_files", "variable_name", "some_function"];
+[camelCase, PascalCase] = snake2camel(snake_case);
+
+% Example 2: Convert from camel case to snake case
 camelCase = ["nFiles", "VariableName", "someFunction"];
 snake_case = camel2snake(camelCase);
 ```

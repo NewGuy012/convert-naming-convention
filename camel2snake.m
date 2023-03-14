@@ -8,17 +8,8 @@ function snake_case = camel2snake(camelCase)
 %   camelCase - Input text in camel case
 %                [string array | character vector | cell array of character vectors]
 %
-% Examples:
-%   % Example 1: Convert from camel case to snake case
-%   camelCase = ["nFiles", "VariableName", "someFunction"];
-%   snake_case = camel2snake(camelCase);
-%
-% Author:
-%   Moses Yoo, (juyoung.m.yoo at gmail dot com)
-%
-% Special Thanks:
-%   Special thanks to Stephen for showing and explaining the much simpler
-%   regular expression version!
+% Documentation:
+%   Please refer to the GitHub page for examples and more details.
 
 % Argument validation
 arguments
