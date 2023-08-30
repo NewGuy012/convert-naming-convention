@@ -17,10 +17,13 @@ arguments
 end
 
 % Capitialize letters with that have an underscore preceding it
-temp_txt = regexprep(snake_case,'_([a-z])','${upper($1)}');
+temp_txt = regexprep(snake_case,'_([a-zA-Z])','${upper($1)}');
 
 % Remove underscore for numbers that have an underscore preceding
 temp_txt = regexprep(temp_txt,'_([0-9])', '$1');
+
+% Remove underscore at the beginning or end of text
+temp_txt = regexprep(temp_txt,'(^_|_$)', '');
 
 % Camel case
 camelCase = regexprep(temp_txt, '^([A-Z])', '${lower($1)}');
